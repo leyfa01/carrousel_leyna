@@ -1,0 +1,97 @@
+html {
+    margin: 0 !important;
+}
+
+.carrousel_WP {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.624);
+    z-index: 1000000;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .carrousel_figure {
+       
+        width: 60%;
+        height: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease; 
+        transform: scale(1); 
+        &.carrousel_fermer_animation {
+            transform: scale(0);
+        }
+        img {
+            transition: all 0.5s linear;
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: auto;
+            max-height: 35rem;
+            
+        }
+        .carrousel_fermer {
+            position: absolute;
+            top: -5%;
+            right: -5%;
+            z-index: 2;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+           
+            &::before {
+                content: "";
+                width: 2rem;
+                height: 2rem;
+                bottom: 50%;
+                right: 50%;
+                transform: translate(50%, 50%);
+                border-radius: 50%;
+                border: white 1px solid;
+                position: absolute;
+            }
+          
+        }
+        .fleche {
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+            border: none;
+            background: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            &.carrousel_precedent {
+                transform: rotate(180deg);
+                left: -10%;
+            }
+            &.carrousel_suivant {
+                right: -10%;
+            }
+        }
+        
+        
+    }
+    
+    .carrousel_form {
+        margin-top: 4rem;
+        display: flex;
+        
+    }
+
+    
+}
+
+.carrousel_ouvert {
+    
+    display: flex;
+}
+
